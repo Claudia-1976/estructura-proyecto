@@ -3,7 +3,7 @@
 
 module.exports = (sequelize,DataTypes) => {
 
-  let  Cliente = sequelize.define('cliente', {
+  let  Usuario = sequelize.define('usuario', {
     id: {
       type: DataTypes.BIGINT,
       autoIncrement: true,
@@ -43,9 +43,9 @@ module.exports = (sequelize,DataTypes) => {
     freezeTableName: true
   });
 
-  Cliente.associate = models => {
+  Usuario.associate = models => {
     //relaciones
   }
 
-  return Cliente;
+  return Usuario;
 };

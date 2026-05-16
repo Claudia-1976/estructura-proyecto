@@ -1,10 +1,9 @@
 'use strict';
 
-const { DataTypes } = require("sequelize");
 
-module.exports = (sequelize) => {
+module.exports = (sequelize,DataTypes) => {
 
-  const Producto = sequelize.define('producto', {
+  let Producto = sequelize.define('producto', {
     id: {
       type: DataTypes.BIGINT,
       autoIncrement: true,
