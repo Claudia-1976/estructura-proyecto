@@ -12,8 +12,7 @@ module.exports = {
                 defaults: {
                     nombre: "Claudia",
                     apellido: "Ilarragorri",
-                    email: "cilarragorri@gmail.com",
-                    edad: 50
+                    dni: 25063198
                 }
             }),
             models.cliente.findOrCreate({
@@ -23,8 +22,7 @@ module.exports = {
                 defaults: {
                     nombre: "Fermin",
                     apellido: "Velazquez",
-                    email: "fermin.bsso@gmail.com",
-                    edad: 18
+                    dni:54417207
                 }
             })
         ])

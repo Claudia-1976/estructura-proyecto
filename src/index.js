@@ -11,6 +11,7 @@ const configuracionApi = (app ) => {
 
 const configuracionRouter = (app) => {
     app.use('/api/',routerConfig.rutas_init())
+    app.use('/', routerConfig.rutas_auth())
 
 }
 const init =() => {

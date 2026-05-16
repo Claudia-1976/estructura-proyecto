@@ -1,15 +1,16 @@
 'use strict';
 
-/** @type {import('sequelize-cli').Migration} */
+const models = require("../models/index");
+
 module.exports = {
-  async up (queryInterface, Sequelize) {
-      return Promise.all([
+    async up (queryInterface, Sequelize) {
+        return Promise.all([
                 models.producto.findOrCreate({
                     where: {
                         id: "1"
                     },
                     defaults: {
-                        codigo = 'A1',
+                        codigo :11,
                         descripcion: "Producto 1"
                         
                     }
@@ -19,7 +20,7 @@ module.exports = {
                         id: "2"
                     },
                     defaults: {
-                        codigo = 'A2',
+                        codigo : 22,
                         descripcion: "Producto 2"
               
                     }
@@ -27,12 +28,5 @@ module.exports = {
             ])
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-  }
+  
 };

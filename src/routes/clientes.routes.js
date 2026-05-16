@@ -1,10 +1,10 @@
 const router = require("express").Router();
 
-const productoController  = require('../controllers/cliente.controller.js')
+const clienteController  = require('../controllers/cliente.controller.js')
 
-router.get('/prueba', productoController.prueba)
-router.get('/',productoController.listar)
-router.post('/',productoController.crear)
-router.post('/:nrodoc',productoController.listarInfo)
+router.get('/prueba', clienteController.prueba)
+router.get('/',clienteController.listar)
+router.post('/',clienteController.crear)
+router.post('/:nrodoc',clienteController.listarInfo)
 
 module.exports = router;

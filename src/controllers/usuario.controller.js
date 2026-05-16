@@ -3,6 +3,7 @@
 const models = require("../database/models/index")
 const errors = require("../const/errors")
 
+
 module.exports = {
 
     listar: async (req, res, next) => {
@@ -45,6 +46,11 @@ module.exports = {
     crear: async (req, res, next) => {
         try {
             const user = await models.usuario.create(req.body)
+            
+            // encripto contraseña con bcrypt
+
+            user.password = user.cryptPassword(user.password) // encripto la contraseña
+            await user.save() 
 
             res.json({
                 success: true,
