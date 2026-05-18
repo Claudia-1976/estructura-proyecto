@@ -4,9 +4,18 @@ const errors = require("../const/errors")
 
 module.exports = {
 
-    listar: async (req,res) => {
+    listar: async (req,res,next) => {
            try {
-                   const clients = await models.cliente.findAll()
+                   const clients = await models.cliente.findAll(
+                    {
+                    include:[{
+                        model:models.cliente_producto,
+                        include:[{
+                          model:models.producto
+                        }]
+                    }]    
+                   }
+                   )
        
                    res.json({
                        success: true,
@@ -20,7 +29,7 @@ module.exports = {
                }
     },
 
-    listarInfo: async (req,res) => {
+    listarInfo: async (req,res,next) => {
             try {
                     const client = await models.cliente.findOne({
                         where: {
@@ -42,7 +51,7 @@ module.exports = {
         
     },
 
-    crear: async (req,res) => {
+    crear: async (req,res,next) => {
         try {
             const client = await models.cliente.create(req.body)
 

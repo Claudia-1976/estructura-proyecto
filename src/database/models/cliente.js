@@ -45,6 +45,7 @@ module.exports = (sequelize,DataTypes) => {
 
   Cliente.associate = models => {
     //relaciones
+    Cliente.hasMany(models.cliente_producto)
   }
 
   return Cliente;

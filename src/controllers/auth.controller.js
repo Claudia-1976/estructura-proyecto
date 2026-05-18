@@ -9,6 +9,7 @@ module.exports = {
     login: async (req, res, next) => {
         try {
             // 1. Verifico que el usuario exista solo comparando con el email
+            console.log(req.body.email)
             const user = await models.usuario.findOne({
                 where: {
                     email: req.body.email

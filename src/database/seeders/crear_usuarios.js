@@ -12,9 +12,9 @@ module.exports = {
                     id: "1"
                 },
                 defaults: {
-                    nombre: "Juan",
-                    apellido: "Gonzalez",
-                    email: "emailJuan@email.com",
+                    nombre: "Claudia",
+                    apellido: "Ilarragorri",
+                    email: "cilarragorri@gmail.com",
                     dni:25063198,
                     edad: 25,
                     password: bcrypt.hashSync('123456')

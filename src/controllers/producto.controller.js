@@ -3,9 +3,9 @@ const errors = require("../const/errors")
 
 module.exports = {
 
-    listar: async (req,res) => {
+    listar: async (req,res,next) => {
         try {
-                const products = await models.productos.findAll()
+                const products = await models.producto.findAll()
     
                 res.json({
                     success: true,
@@ -19,9 +19,9 @@ module.exports = {
             }
     },
 
-    listarInfo: async (req,res) => {
+    listarInfo: async (req,res,next) => {
             try {
-                    const product = await models.productos.findOne({
+                    const product = await models.producto.findOne({
                         where: {
                             id: req.params.idProducto
                         }
@@ -41,7 +41,7 @@ module.exports = {
           
     },
 
-    crear: async (req,res) => {
+    crear: async (req,res,next) => {
         try {
             const product = await models.producto.create(req.body)
 

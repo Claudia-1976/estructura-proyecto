@@ -1,11 +1,12 @@
 const express = require('express')
 const routerConfig = require('./routes/index.routes.js')
 globalConstants = require('./const/globalConstants')
+const logger = require('morgan')
 
 const configuracionApi = (app ) => {
-    app.use(express.json())
-    app.use(express.urlencoded({extended: true}))
-   
+    app.use(express.json())  // para que express entieda json
+    app.use(express.urlencoded({extended: true})) //para que express entienda formulario
+    app.use(logger('dev'))
     
 }
 
@@ -20,7 +21,7 @@ const init =() => {
     configuracionRouter(app)
     app.listen(globalConstants.PORT)
     
-    console.log('La aplicacion se esta ejecutando')
+    console.log('La aplicacion se esta ejecutando en el puerto: ' +globalConstants.PORT)
 }
 
 init();

@@ -3,19 +3,11 @@
 
 module.exports = (sequelize,DataTypes) => {
 
-  let Producto = sequelize.define('producto', {
+  let  Cliente_producto = sequelize.define('cliente_producto', {
     id: {
       type: DataTypes.BIGINT,
       autoIncrement: true,
       primaryKey: true,
-      allowNull: false
-    },
-    descripcion: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    codigo: {
-      type: DataTypes.INTEGER,
       allowNull: false
     },
     createdAt: {
@@ -39,10 +31,11 @@ module.exports = (sequelize,DataTypes) => {
     freezeTableName: true
   });
 
-  Producto.associate = models => {
+  Cliente_producto.associate = models => {
     //relaciones
-    Producto.hasMany(models.cliente)
+    Cliente_producto.belongsTo(models.cliente)
+    Cliente_producto.belongsTo(models.producto)
   }
 
-  return Producto;
+  return Cliente_producto;
 };
